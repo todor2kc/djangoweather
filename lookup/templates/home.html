@@ -3,8 +3,6 @@
 {% block content %}
 
 
-<!-- {{ api.0 }}<br/><br/> -->
-
 {%if zipcode %}
     {{ zipcode }}
 {% endif %}
@@ -14,22 +12,59 @@
     {% if api == "Error.." %}
         There was an error, please try again..
     {% else  %}
-    <div class="jumbotron jumbotron-fluid {{ category_color }}">
-        <h1 class="display-4">{{ api.0.Category.Name }}</h1>
-        <p class="lead">Current: {{ api.0.ReportingArea }} Air Qulity: {{ api.0.AQI }}</p>
-
-        <p>{{ category_description }}</p>
+    
+    <section class="s1">
+        <div class="main-container">
+            <div class="greeting-wrapper">
+                <h1>AIR quality for searched zip code</h1>
+            </div>
+            <div class="intro-wrapper">
+                <div class="nav-wrapper">
+                    <div class="dots-wrapper">
+                        <div id="dot-1" class="browser-dot"></div>
+                        <div id="dot-2" class="browser-dot"></div>
+                        <div id="dot-3" class="browser-dot"></div>
+                    </div>
+                    <ul id="navigation">
+                        <li><a href="#">Change theme</a></li>
+                        <li>
+                            <label class="switch">
+                              <i class="fas fa-adjust"></i>
+                              <div>
+                                <input class="theme" id="chk" type="checkbox" />
+                                <span class="slider round"></span>
+                              </div>
+                            </label>
+                          </li>
+                    </ul>
+                </div>
+                <div class="container-state {{ category_color }}" style="border-radius: 0 0 10px 10px;">
+                    <h1 class="status">{{ api.0.Category.Name }}</h1>
+                    <p class="current">Current: {{ api.0.ReportingArea }} Air Qulity: {{ api.0.AQI }}</p>
+                    <p class="explanation" style="margin-bottom: 0;">{{ category_description }}</p>
+                </div>
+                
+            </div>
+        </div>
         
-        
+    </section>
 
 
 
-    </div>
-        <!-- Air Qulity: {{ api.0.AQI }}<br/>
-        Area: {{ api.0.ReportingArea }}<br/>
-        Category: {{ api.0.Category.Name }}<br/><br/> -->
     {% endif  %}
 {% endif  %}
-<!-- {{ api }}<br/><br/> -->
+
 
 {% endblock %}
+
+
+
+
+
+<!-- {{ api }}<br/><br/> -->
+<!-- Air Qulity: {{ api.0.AQI }}<br/>
+Area: {{ api.0.ReportingArea }}<br/>
+Category: {{ api.0.Category.Name }}<br/><br/> -->
+<!-- {{ api.0 }}<br/><br/> -->
+
+
