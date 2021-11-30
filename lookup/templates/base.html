@@ -10,8 +10,10 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 
-    <title>AIR quality USA</title>
+
+    <title>AIR quality in USA</title>
     
 
   </head>
@@ -19,7 +21,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style=" background-color: rgb(0, 0, 255)">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{%url 'home'%}">Weather app</a>
+          <a class="navbar-brand" href="{%url 'home'%}">AIR quality app</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -31,7 +33,7 @@
             </ul>
             <form action="{%url 'home' %}" class="d-flex" method="POST">
               {% csrf_token %}
-              <input class="form-control me-2" type="search" placeholder="Enter a zip code" aria-label="Search" name="zipcode">
+              <input class="form-control me-3" type="search" placeholder="Enter a zip code US" aria-label="Search" name="zipcode">
               <button class="btn btn-secondary" type="submit">Lookup</button>
             </form>
           </div>
@@ -59,6 +61,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
     -->
   </body>
+  <footer id="contact">
+    <div class="footer-1">Created by Stefan as portfolio project.</div>
+    <ul>
+      <div id="icon-container">
+        <a href="#">
+          <div id="icon">
+            <li><i class="fab fa-linkedin-in"></i></li>
+          </div>
+        </a>
+        <a href="#">
+          <div id="icon">
+            <li><i class="far fa-envelope"></i></li>
+          </div>
+        </a>
+        <a href="#">
+          <div id="icon">
+            <li><i class="fab fa-github"></i></li>
+          </div>
+      </div></a>
+    </ul>
+  </footer>
 </html>
 
 
